@@ -2,5 +2,178 @@
 {
     background-color: #e8e8e8;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+}
+
+.header
+{
+    padding: 0 73px 0 24px;
+    display: flex;
+    height: 72px;
+    width: 100%;
+    align-items: center;
+}
+
+.headerIcon
+{
+    width: 1035px;
+}
+
+.headerIconImg
+{
+    width: 34px;
+    height: 37.78px;
+}
+
+.headerProfile
+{
+    width: 262px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerProfileIcon
+{
+    width: 37px;
+    height: 37px;
+}
+
+.headerProfileName
+{
+    font-family: 'Lexend', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.line
+{
+    width: 100%;
+    height: 1px;
+    background: #DCDBDB;
+}
+
+.main
+{
+    display: flex;
+}
+
+.video
+{
+    position: relative;
+    width: 1035px;
+    height: 952px;
+    background: url(../../assets/images/videochat/bigVideoImg.jpg) center center/cover no-repeat;
+}
+
+.videoWrapper
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 7px;
+    bottom: 13px;
+}
+
+.videoTimer, .videoMicro, .videoCall
+{
+    width: 240px;
+    height: 78px;
+    background: rgba(255, 255, 255, 0.63);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    margin-right: 55px;
+    cursor: pointer;
+}
+
+.videoMicro
+{
+    width: 90px;
+    height: 90px;
+    margin-right: 52px;
+}
+
+.videoCall
+{
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    background: #E93030;
+    margin-right: 93px;
+}
+
+.aside
+{
+    width: 335px;
+    padding: 9px 11px 7px 9px;
+}
+
+.btnReq
+{
+    width: 315px;
+    height: 87px;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.text
+{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 16px 0;
+}
+.notes
+{
+    position: relative;
+}
+.note
+{
+    width: 312px;
+    height: 710px;
+    padding: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.notesBtn
+{
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 312px;
+    height: 51px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.btnEnd
+{
+    margin-top: 7px;
+    width: 312px;
+    height: 76px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 25px;
+}
+.btnEnd:hover
+{
+    background: #F2F2F2;
 }

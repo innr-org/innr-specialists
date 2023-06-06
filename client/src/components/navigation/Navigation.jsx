@@ -12,7 +12,8 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 
 function Navigation() {
-    const [isArrowClicked, setIsArrowClicked] = useState(false)
+    const [isArrowClicked, setIsArrowClicked] = useState(true)
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const path = useLocation().pathname
@@ -52,10 +53,7 @@ function Navigation() {
                     className={cl.toggleArrow}
                     src={!isArrowClicked ? arrowLeft : arrowRight}
                     alt="arrow-left-or-right"
-                    onClick={() => {
-                        setIsArrowClicked(prev => !prev)
-                        console.log(isArrowClicked)
-                    }}
+                    onClick={() => setIsArrowClicked(prev => !prev)}
                 />
             </div>
             <nav className={cl.navWrapper}>
