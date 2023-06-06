@@ -12,6 +12,7 @@ import NotAuth from "./components/notAuth/NotAuth.jsx";
 import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
+import Videochat from "./pages/videochat/Videochat.jsx";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                         <Route path="/home" element={userInfo===null ? <NotAuth/> :<Home/>}></Route>
                         <Route path="/timeslot" element={userInfo===null ? <NotAuth/> :<TimeSlot/>}></Route>
                         <Route path="/schedule" element={userInfo===null ? <NotAuth/> :<Schedule/>}></Route>
+                        <Route path="/videochat" element={userInfo===null ? <NotAuth/> :<Videochat/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>
