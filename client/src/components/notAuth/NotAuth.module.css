@@ -1,0 +1,17 @@
+.noAuthWrapper{
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    place-content: center;
+}
+
+.noAuthWrapper h2{
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+.noAuthWrapper button{
+    letter-spacing: 0.1em;
+}

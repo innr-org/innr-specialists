@@ -1,0 +1,32 @@
+.scheduleWrapper{
+    width: calc(100vw - 253px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F5F5;
+}
+
+.container{
+    width: 90%;
+}
+
+.scheduleItemsWrapper{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.nextWeek{
+    position: absolute;
+    right: 33px;
+    top: 14px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #338D42;
+    cursor: pointer;
+}
+
+.nextWeek:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,75 @@
+.scheduleItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 62px 51px;
+    position: relative;
+}
+
+.day{
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.weekDay{
+    font-size: 1.125rem;
+    margin-bottom: 3px;
+    text-transform: capitalize;
+}
+
+.date{
+    font-size: 1rem;
+    color: #808080;
+    margin-bottom: 21px;
+}
+
+.slots{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.slot{
+    position: relative;
+}
+
+
+.slot .acceptPng, .rejectPng{
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.rejectPng{
+    left: calc(100% + 23px);
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    gap: 20px;
+}
+.modal button{
+    width: 100%;
+    font-size: 1.25rem;
+}
+
+.modal button:first-of-type{
+    background: rgba(200, 250, 96, 0.43);
+}
+.modal button:first-of-type:hover{
+    background: rgba(200, 250, 96, 1);
+}
+
+.modal button:last-of-type{
+    background: #FCECEC;
+}
+.modal button:last-of-type:hover{
+    background: #ffa6a6;
+}
+
