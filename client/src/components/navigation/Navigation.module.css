@@ -7,11 +7,31 @@
     background-color: white;
 }
 
+.navigationHidden
+{
+    width: 70px;
+    align-items: center;
+}
+
+.navigationHeader
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .title{
     width: 100%;
     font-size: 1.5rem;
     font-weight: 700;
     padding: 21px 15px 34px;
+}
+
+.toggleArrow
+{
+    width: 30px;
+    margin: 10px 10px 13px 0;
+    cursor: pointer;
 }
 
 .navWrapper{
@@ -30,6 +50,11 @@
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease-out;
+}
+
+.navItemMini
+{
+    gap: 0px;
 }
 
 .logout, .login{
