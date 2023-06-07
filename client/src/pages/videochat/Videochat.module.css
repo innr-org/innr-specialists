@@ -122,6 +122,10 @@
     font-size: 24px;
     line-height: 31px;
 }
+.btnReqHidden
+{
+    display: none;
+}
 
 .text
 {
@@ -130,6 +134,11 @@
     line-height: 25px;
     margin: 16px 0;
 }
+.textFirst
+{
+    margin: 0 0 16px 0;
+}
+
 .notes
 {
     position: relative;
@@ -150,6 +159,10 @@
     outline: none;
     border: none;
 }
+.noteBig
+{
+    height: 815px;
+}
 
 .notesBtn
 {
@@ -158,7 +171,6 @@
     left: 0;
     width: 312px;
     height: 51px;
-    border-radius: 10px;
     font-size: 18px;
     line-height: 23px;
 }
@@ -169,11 +181,114 @@
     width: 312px;
     height: 76px;
     background: #F2F2F2;
-    border-radius: 10px;
     font-size: 20px;
     line-height: 25px;
 }
-.btnEnd:hover
+.btnEnd:hover, .scanMagnifyBtn:hover
 {
     background: #F2F2F2;
+}
+.btnEnd:focus, .scanMagnifyBtn:focus, .scanCloseBtn:focus
+{
+    outline: none !important;
+    border: none;
+    transform: scale(1);
+    background: #F2F2F2;
+}
+
+.scans
+{
+    margin-top: 9px;
+    display: none;
+    width: 1035px;
+    gap: 18px;
+}
+.scansActive
+{
+    display: flex;
+}
+
+.scanResultsWrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 293px;
+    width: 677px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.scanResults
+{
+    display: flex;
+    width: 100%;
+    /* height: 196px; */
+    align-items: center;
+    padding: 6px 0 15px;
+}
+
+.scanResultItem
+{
+    padding: 60px 0;
+    width: 215px;
+    height: 196px;
+    border-right: 1px solid rgba(191, 191, 191, 0.65);
+}
+.scanResultItem:nth-child(2)
+{
+    width: 238px;
+}
+.scanResultItem:last-child
+{
+    border: none;
+    width: 224px;
+}
+
+.scanResultTitle, .scanResultInfo, .scanResultInfoGreen
+{
+    font-family: 'Lexend', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #808080;
+    text-align: center;
+    margin-bottom: 31px;
+}
+
+.scanResultInfo
+{
+    color: #000;
+    margin-bottom: 0;
+}
+
+.scanResultInfoGreen
+{
+    color: #338D42;
+}
+
+.scanResultBtns
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scanMagnifyBtn
+{
+    width: 327px;
+    height: 76px;
+    background: #F2F2F2;
+}
+.scanCloseBtn
+{
+    width: 336px;
+    height: 76px;
+    background: #FCECEC;
+}
+.scanCloseBtn:hover, .scanCloseBtn:focus
+{
+    background: #FCECEC;
 }
