@@ -39,6 +39,7 @@ function Home() {
                             <div className={cl.entriesSubWrapper}>
                                 <h3 className={cl.entriesSub + " " + (entriesType==="upcoming" && cl.active)} onClick={() => setEntriesType("upcoming")}>Предстоящие записи</h3>
                                 <h3 className={cl.entriesSub + " " + (entriesType==="old" && cl.active)} onClick={() => setEntriesType("old")}>Прошедшие записи</h3>
+                                <h3 className={cl.entriesSub + " " + (entriesType==="all" && cl.active)} onClick={() => setEntriesType("all")}>Все записи</h3>
                             </div>
                             <Entries type={entriesType} selectedDate={selectedDate}/>
                         </div>

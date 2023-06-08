@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Navigate, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {PropagateLoader} from "react-spinners";
 import Login from "./pages/login/Login.jsx";
@@ -12,8 +12,14 @@ import NotAuth from "./components/notAuth/NotAuth.jsx";
 import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
+
 import Videochat from "./pages/videochat/Videochat.jsx";
 import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
+
+import Client from "./pages/client/Client.jsx";
+import Notifications from "./pages/notifications/Notifications.jsx";
+import DateService from "./app/services/date/dateService.js";
+
 
 
 function App() {
@@ -38,8 +44,13 @@ function App() {
                         <Route path="/home" element={<Home/>}></Route>
                         <Route path="/timeslot" element={<TimeSlot/>}></Route>
                         <Route path="/schedule" element={<Schedule/>}></Route>
+
                         <Route path="/videochat" element={<Videochat/>}></Route>
                         <Route path="/offlinechat" element={<Offlinechat/>}></Route>
+
+                        <Route path="/client" element={<Client/>}></Route>
+                        <Route path="/notifications" element={<Notifications/>}></Route>
+
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>
