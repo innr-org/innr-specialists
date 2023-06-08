@@ -14,7 +14,7 @@ import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
 import Videochat from "./pages/videochat/Videochat.jsx";
 import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
-
+import Client from "./pages/client/Client.jsx";
 
 function App() {
     const dispatch = useDispatch()
@@ -35,11 +35,12 @@ function App() {
                     {userInfo && <Navigation/>}
                     <Routes>
                         <Route path="/login" element={<Login/>}></Route>
-                        <Route path="/home" element={<Home/>}></Route>
-                        <Route path="/timeslot" element={<TimeSlot/>}></Route>
-                        <Route path="/schedule" element={<Schedule/>}></Route>
+                        <Route path="/home" element={userInfo===null ? <NotAuth/> :<Home/>}></Route>
+                        <Route path="/timeslot" element={userInfo===null ? <NotAuth/> :<TimeSlot/>}></Route>
+                        <Route path="/schedule" element={userInfo===null ? <NotAuth/> :<Schedule/>}></Route>
                         <Route path="/videochat" element={<Videochat/>}></Route>
                         <Route path="/offlinechat" element={<Offlinechat/>}></Route>
+                        <Route path="/client" element={<Client/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>

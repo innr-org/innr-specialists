@@ -21,6 +21,8 @@ function Navigation() {
     const homeRef = useRef(null)
     const scheduleRef = useRef(null)
     const timeslotRef = useRef(null)
+    const clientRef = useRef(null)
+
 
     function customLogout(){
         dispatch(logout())
@@ -31,6 +33,8 @@ function Navigation() {
         homeRef.current.classList.remove(cl.active)
         scheduleRef.current.classList.remove(cl.active)
         timeslotRef.current.classList.remove(cl.active)
+        clientRef.current.classList.remove(cl.active)
+
 
         switch (path){
             case "/home":
@@ -41,6 +45,9 @@ function Navigation() {
                 break
             case "/timeslot":
                 timeslotRef.current.classList.add(cl.active)
+                break
+            case "/client":
+                clientRef.current.classList.add(cl.active)
                 break
         }
     }, [path])
@@ -57,7 +64,7 @@ function Navigation() {
                 />
             </div>
             <nav className={cl.navWrapper}>
-                <div 
+            <div 
                     ref={homeRef} 
                     onClick={() => navigate("/home")} 
                     className={!isArrowClicked ? cl.navItem : cl.navItem + ' ' + cl.navItemMini}
