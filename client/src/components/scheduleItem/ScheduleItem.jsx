@@ -4,14 +4,14 @@ import acceptPng from "../../assets/icons/accept.png"
 import rejectPng from "../../assets/icons/reject.png"
 import {useState} from "react";
 import DateService from "../../app/services/date/dateService.js";
-import {slots} from "../../pages/data/slots.js";
+import {slotsSpecialist} from "../../pages/data/slots.js";
 import Modal from "../UI/modal/Modal.jsx";
 import Button from "../UI/button/Button.jsx";
 import {set} from "react-hook-form";
 
 function ScheduleItem({day}) {
     const [getCurrentDate, setGetCurrentDate] = useState(new Date().toISOString())
-    const [allSlots, setAllSlots] = useState(slots)
+    const [allSlots, setAllSlots] = useState(slotsSpecialist)
     const [clickedSlots, setClickedSlots] = useState([]);
     const [modalOpened, setModalOpened] = useState({opened: false, id: ""})
 

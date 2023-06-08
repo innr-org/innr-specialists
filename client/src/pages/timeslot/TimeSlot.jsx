@@ -6,11 +6,12 @@ import DateService from "../../app/services/date/dateService.js";
 import TimeSlotItem from "../../components/timeslotItem/TimeSlotItem.jsx";
 import Button from "../../components/UI/button/Button.jsx";
 import ChooseTime from "../../components/chooseTime/ChooseTime.jsx";
-import { slots } from '../data/slots.js';
+import { slotsSpecialist } from '../data/slots.js';
 import { standardSlots } from "../data/standardSlots.js";
+import "../../app/services/date/toLocaleStringPolyfill.js";
+
 
 function TimeSlot() {
-    console.log(new Date("2023-06-04T18:00:00.000Z"))
     const format = DateService.formatIsoToNormal;
     const getHours = DateService.getHours;
     const getMinutes = DateService.getMinutes;
@@ -18,9 +19,10 @@ function TimeSlot() {
     const [selectedDate, setSelectedDate] = useState(dateValue.toISOString());
     const [selectedDateSlots, setSelectedDateSlots] = useState([]);
     const [newSlots, setNewSlots] = useState([]);
+    const [slots, setSlots] = useState(slotsSpecialist)
     const startInput = useRef(null);
     const endInput = useRef(null);
-    const [newId, setNewId] = useState(standardSlots.length+1)
+    const [newId, setNewId] = useState(slots.length+1)
 
     useEffect(() => {
         setSelectedDate(dateValue.toISOString());
@@ -28,19 +30,19 @@ function TimeSlot() {
 
     useEffect(() => {
         setSelectedDateSlots([]);
+
         slots.forEach(slot => {
-            if (new Date(slot.dateStart).toLocaleDateString() === new Date(selectedDate).toLocaleDateString()) {
+            console.log(new Date(slot.dateStart).toLocaleString().split(",")[0] === new Date(selectedDate).toLocaleString().split(",")[0])
+            if (new Date(slot.dateStart).toLocaleString().split(",")[0] === new Date(selectedDate).toLocaleString().split(",")[0]) {
                 setSelectedDateSlots(prevSlots => [...prevSlots, slot]);
             }
         });
     }, [selectedDate]);
 
-    useEffect(() => {
-        console.log(selectedDateSlots);
-    }, [selectedDateSlots]);
 
     /*SLOTS BY DAY*/
     const selectedDateSlotsItems = selectedDateSlots.map((slot) => {
+        console.log(slot)
         const startHours = getHours(slot.dateStart);
         const startMinutes = getMinutes(slot.dateStart);
         const endHours = getHours(slot.dateEnd);
@@ -50,6 +52,7 @@ function TimeSlot() {
                 {`${startHours}:${startMinutes} - ${endHours}:${endMinutes}`}
             </TimeSlotItem>
         );
+
     });
 
     /*STANDARD SLOTS*/
@@ -81,10 +84,6 @@ function TimeSlot() {
         }
         setNewSlots([...newSlots, slot]);
     }
-
-    useEffect(() => {
-        console.log(newSlots);
-    }, [newSlots]);
 
     function submitTime(e) {
         e.preventDefault();
@@ -120,6 +119,23 @@ function TimeSlot() {
         <ChooseTime ref={ref} {...props} />
     ));
 
+    function addSlot(){
+        newSlots.forEach(slot => {
+            console.log(slot.timeStart)
+            setSlots([...slots, {
+                id: newId,
+                dateStart: selectedDate.substring(0,11) + slot.timeStart + ":00." + selectedDate.substring(20),
+                dateEnd: selectedDate.substring(0,11) + slot.timeEnd + ":00." + selectedDate.substring(20)
+            }])
+            setNewId(prevId => prevId+1)
+        })
+        setNewSlots([])
+    }
+
+    useEffect(() => {
+        console.log(slots)
+    }, [slots])
+
     return (
         <div className={cl.timeslotWrapper}>
             <div className={cl.container}>
@@ -133,7 +149,7 @@ function TimeSlot() {
                             <div className={cl.selectedDateSlots}>
                                 {selectedDateSlotsItems.length !== 0 ? selectedDateSlotsItems : <h2>Здесь пусто</h2>}
                             </div>
-                            <Button className={cl.selectedDateSave}>Сохранить</Button>
+                            <Button className={cl.selectedDateSave} onClick={addSlot}>Сохранить</Button>
                         </div>
                     </div>
 
