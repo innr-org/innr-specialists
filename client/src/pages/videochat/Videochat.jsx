@@ -4,18 +4,25 @@ import calendarIcon from '../../assets/icons/videochat/calendar.svg'
 import callIcon from '../../assets/icons/videochat/call.svg'
 import microphoneIcon from '../../assets/icons/videochat/microphone.svg'
 import profileIcon from '../../assets/icons/videochat/profile.svg'
+import microMutedIcon from '../../assets/icons/videochat/microMute.svg'
 
 import scanResultSmallImg from '../../assets/images/videochat/scanResultImg.png'
 import scanResultBigImg from '../../assets/images/videochat/scanResultBig.png'
 import smallVideoImg from '../../assets/images/videochat/smallVideoImg.png'
+import extraSmallVideoImg from '../../assets/images/videochat/extraSmallVideoImg.png'
 
 import cl from './Videochat.module.css'
 import Button from '../../components/UI/button/Button'
 import { useState, useRef } from 'react'
+import Modal from '../../components/UI/modal/Modal'
+import Image from '../../components/UI/image/Image'
 
 const Videochat = () => {
     const [isClicked, setIsClicked] = useState(false)
-    const btnRef = useRef(null)
+    const [isMuted, setIsMuted] = useState(false)
+    const [isLarge, setIsLarge] = useState(false)
+    const scanImgRef = useRef(null)
+
 
     function requestScans()
     {
@@ -25,6 +32,18 @@ const Videochat = () => {
     function closeScans()
     {
         setIsClicked(false)
+    }
+
+    function muteAudio()
+    {
+        setIsMuted(prev => !prev)
+    }
+
+    function enlargeImage(img)
+    {
+        setIsLarge(prev => !prev)
+        console.log(isLarge);
+        return <Modal visible={isLarge} className={cl.largedImg}> {img} </Modal>
     }
 
     return (
@@ -43,17 +62,24 @@ const Videochat = () => {
 
             <main className={cl.main}>
                 
-                <section className={cl.video}>
-                    <div className={cl.videoWrapper}>
-                        <div className={cl.videoTimer}>00:45</div>
-                        <div className={cl.videoMicro}>
-                            <img className={cl.videoMicroIcon} src={microphoneIcon} alt="micro-icon" />
+                <section className={!isClicked ? cl.video : cl.video + ' ' + cl.videoMove}>
+                    <div className={!isClicked ? cl.videoWrapper : cl.videoWrapper + ' ' + cl.videoWrapperSmall}>
+                        <div className={!isClicked ? cl.videoTimer : cl.videoTimer + ' ' + cl.videoTimerSmall}>00:45</div>
+                        <div
+                            className={!isClicked ? cl.videoMicro : cl.videoMicro + ' ' + cl.videoMicroSmall}
+                            onClick={muteAudio}
+                        >
+                            <img
+                                className={!isClicked ? cl.videoMicroIcon : cl.videoMicroIcon + ' ' + cl.videoMicroIconSmall}
+                                src={isMuted ? microMutedIcon : microphoneIcon}
+                                alt="micro-icon"
+                            />
                         </div>
-                        <div className={cl.videoCall}>
-                            <img className={cl.videoCallIcon} src={callIcon} alt="call-icon" />
+                        <div className={!isClicked ? cl.videoCall : cl.videoCall + ' ' + cl.videoCallSmall}>
+                            <img className={!isClicked ? '' : cl.videoCallIcon} src={callIcon} alt="call-icon" />
                         </div>
                         <div className={cl.videoSmall}>
-                            <img className={cl.videoSmallImg} src={smallVideoImg} alt="small-img" />
+                            <img className={cl.videoSmallImg} src={!isClicked ? smallVideoImg : extraSmallVideoImg} alt="small-img" />
                         </div>
                     </div>
                 </section>
@@ -67,31 +93,38 @@ const Videochat = () => {
                     </div>
                     <Button className={cl.btnEnd}>Прием завершен</Button>
                 </aside>
+
+                <section className={!isClicked ? cl.scans : cl.scans + ' ' + cl.scansActive}>
+                    <Image className={cl.scanImg} alt='scan-img' src={scanResultSmallImg} border={true} zoom={true}></Image>
+                    <div className={cl.scanResultsWrapper}>
+                        <div className={cl.scanResults}>
+                            <div className={cl.scanResultItem}>
+                                <h2 className={cl.scanResultTitle}>Скан</h2>
+                                <p className={cl.scanResultInfo}>Май 30, 2023</p>
+                            </div>
+                            <div className={cl.scanResultItem}>
+                                <h2 className={cl.scanResultTitle}>Результат</h2>
+                                <p className={cl.scanResultInfoGreen}>98%</p>
+                            </div>
+                            <div className={cl.scanResultItem}>
+                                <h2 className={cl.scanResultTitle}>Заболевание</h2>
+                                <p className={cl.scanResultInfo}>Акне папуло-пустулезное</p>
+                            </div>
+                        </div>
+                        <div className={cl.scanResultBtns}>
+                            <Button
+                                className={cl.scanMagnifyBtn}
+                                onClick={() => enlargeImage(scanImgRef)}
+                            >
+                                Увеличить фото
+                            </Button>
+                            <Button className={cl.scanCloseBtn} onClick={closeScans}>Закрыть</Button>
+                        </div>
+                    </div>
+                </section>
             </main>
 
-            <section className={!isClicked ? cl.scans : cl.scans + ' ' + cl.scansActive}>
-                <img className={cl.scanImg} src={scanResultSmallImg} alt='scan-img' />
-                <div className={cl.scanResultsWrapper}>
-                    <div className={cl.scanResults}>
-                        <div className={cl.scanResultItem}>
-                            <h2 className={cl.scanResultTitle}>Скан</h2>
-                            <p className={cl.scanResultInfo}>Май 30, 2023</p>
-                        </div>
-                        <div className={cl.scanResultItem}>
-                            <h2 className={cl.scanResultTitle}>Результат</h2>
-                            <p className={cl.scanResultInfoGreen}>98%</p>
-                        </div>
-                        <div className={cl.scanResultItem}>
-                            <h2 className={cl.scanResultTitle}>Заболевание</h2>
-                            <p className={cl.scanResultInfo}>Акне папуло-пустулезное</p>
-                        </div>
-                    </div>
-                    <div className={cl.scanResultBtns}>
-                        <Button className={cl.scanMagnifyBtn}>Увеличить фото</Button>
-                        <Button className={cl.scanCloseBtn} onClick={closeScans}>Закрыть</Button>
-                    </div>
-                </div>
-            </section>
+            
         </div>
     );
 };

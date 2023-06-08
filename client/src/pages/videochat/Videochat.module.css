@@ -58,6 +58,7 @@
 .main
 {
     display: flex;
+    position: relative;
 }
 
 .video
@@ -68,6 +69,14 @@
     background: url(../../assets/images/videochat/bigVideoImg.jpg) center center/cover no-repeat;
 }
 
+/* move up */
+.videoMove
+{
+    /* margin-bottom: 294px; */
+    height: 641px;
+    margin-bottom: 0;
+}
+
 .videoWrapper
 {
     position: absolute;
@@ -75,6 +84,11 @@
     align-items: center;
     right: 7px;
     bottom: 13px;
+}
+.videoWrapperSmall
+{
+    right: 30px;
+    bottom: 30px;
 }
 
 .videoTimer, .videoMicro, .videoCall
@@ -93,11 +107,35 @@
     cursor: pointer;
 }
 
+.videoTimerSmall
+{
+    width: 203px;
+    height: 58px;
+    margin-right: 104px;
+}
+
 .videoMicro
 {
     width: 90px;
     height: 90px;
     margin-right: 52px;
+}
+
+.videoMicroSmall
+{
+    width: 72px;
+    height: 72px;
+    margin-right: 81px;
+}
+.videoMicroIcon
+{
+    width: 47px;
+    height: 60px;
+}
+.videoMicroIconSmall
+{
+    width: 38px;
+    height: 48px;
 }
 
 .videoCall
@@ -107,6 +145,18 @@
     border-radius: 50%;
     background: #E93030;
     margin-right: 93px;
+}
+.videoCallSmall
+{
+    width: 79px;
+    height: 79px;
+    margin-right: 141px;
+}
+
+.videoCallIcon
+{
+    width: 47px;
+    height: 47px;
 }
 
 .aside
@@ -198,6 +248,9 @@
 
 .scans
 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     margin-top: 9px;
     display: none;
     width: 1035px;
@@ -206,6 +259,7 @@
 .scansActive
 {
     display: flex;
+    bottom: 0px;
 }
 
 .scanResultsWrapper
