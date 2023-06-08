@@ -1,0 +1,35 @@
+.messageWrapper {
+    margin-top: 12px;
+    max-width: 1103px;
+    height: 71px;
+    display: flex;
+    align-items: center;
+    padding: 13px 14px 7px 19px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.message__text {
+    margin-left: 18px;
+}
+
+.message {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.message__date {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.message__time {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    color: #000000;
+}
