@@ -17,12 +17,37 @@
 .headerIcon
 {
     width: 1035px;
+    position: relative;
 }
 
 .headerIconImg
 {
     width: 34px;
     height: 37.78px;
+    cursor: pointer;
+}
+
+.records
+{
+    display: none;
+    position: absolute;
+    padding: 10px 24px;
+    background: rgba(250, 250, 250, 0.65);
+    z-index: 9999;
+    top: 57px;
+}
+.calendarRecordsListItem
+{
+    font-family: 'Lexend', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.recordsActive
+{
+    display: block;
 }
 
 .headerProfile
@@ -345,4 +370,53 @@
 .scanCloseBtn:hover, .scanCloseBtn:focus
 {
     background: #FCECEC;
+}
+
+.scanZoomedImg
+{
+    display: block;
+    width: 50%;
+    /* height: 726px; */
+    /* object-fit: cover; */
+}
+
+
+
+.lightbox {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(200, 198, 198, 0.34);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* animation: none; */
+}
+
+.closeZoomImgBtn
+{
+    margin-top: 19px;
+    width: 336px;
+    height: 76px;
+    background: #FAFAFA;
+    font-size: 20px;
+    line-height: 25px;
+}
+.closeZoomImgBtn:focus, .closeZoomImgBtn:hover
+{
+    background: #FAFAFA;
+}
+
+
+.myswiper
+{
+    width: 850px;
+    height: 726px;
+}
+
+.swiperSlide img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

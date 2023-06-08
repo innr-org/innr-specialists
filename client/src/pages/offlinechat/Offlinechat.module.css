@@ -1,0 +1,328 @@
+.header
+{
+    padding: 0 73px 0 24px;
+    display: flex;
+    height: 72px;
+    width: 100%;
+    align-items: center;
+}
+
+.headerIcon
+{
+    width: 1035px;
+    position: relative;
+}
+
+.headerIconImg
+{
+    width: 34px;
+    height: 37.78px;
+    cursor: pointer;
+}
+
+.records
+{
+    display: none;
+    position: absolute;
+    padding: 10px 24px;
+    background: rgba(250, 250, 250, 0.65);
+    z-index: 9999;
+    top: 57px;
+}
+.calendarRecordsListItem
+{
+    font-family: 'Lexend', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.recordsActive
+{
+    display: block;
+}
+
+.headerProfile
+{
+    width: 262px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerProfileIcon
+{
+    width: 37px;
+    height: 37px;
+}
+
+.headerProfileName
+{
+    font-family: 'Lexend', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.line
+{
+    width: 100%;
+    height: 1px;
+    background: #DCDBDB;
+}
+
+.main
+{
+    position: relative;
+}
+
+.aside
+{
+    display: flex;
+    width: 100%;
+    padding: 16px 14px 0 22px;
+    gap: 15px;
+}
+
+.asideWrapper
+{
+    display: flex;
+    width: 1003px;
+    flex-direction: column;
+}
+
+.btnReq
+{
+    margin-top: 56px;
+    width: 315px;
+    height: 87px;
+    font-size: 24px;
+    line-height: 31px;
+}
+.btnReqHidden
+{
+    display: none;
+}
+
+.text
+{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 16px 0;
+}
+.textFirst
+{
+    margin: 0 0 16px 0;
+}
+
+.notes
+{
+    position: relative;
+}
+.note
+{
+    width: 1003px;
+    height: 571px;
+    padding: 20px 26px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    border: none;
+}
+.noteBig
+{
+    width: 1315px;
+    height: 571px;
+
+}
+
+.notesBtn
+{
+    position: absolute;
+    bottom: 107px;
+    left: 0;
+    width: 1003px;
+    height: 51px;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.btnEnd
+{
+    margin-top: 32px;
+    width: 1003px;
+    height: 74px;
+    background: #F2F2F2;
+    font-size: 20px;
+    line-height: 25px;
+}
+.btnEnd:hover, .scanMagnifyBtn:hover
+{
+    background: #F2F2F2;
+}
+.btnEnd:focus, .scanMagnifyBtn:focus, .scanCloseBtn:focus
+{
+    outline: none !important;
+    border: none;
+    transform: scale(1);
+    background: #F2F2F2;
+}
+
+.scans
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 9px;
+    display: none;
+    width: 1035px;
+    gap: 18px;
+}
+.scansActive
+{
+    display: flex;
+    bottom: 0px;
+}
+
+.scanResultsWrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 293px;
+    width: 677px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.scanResults
+{
+    display: flex;
+    width: 100%;
+    /* height: 196px; */
+    align-items: center;
+    padding: 6px 0 15px;
+}
+
+.scanResultItem
+{
+    padding: 60px 0;
+    width: 215px;
+    height: 196px;
+    border-right: 1px solid rgba(191, 191, 191, 0.65);
+}
+.scanResultItem:nth-child(2)
+{
+    width: 238px;
+}
+.scanResultItem:last-child
+{
+    border: none;
+    width: 224px;
+}
+
+.scanResultTitle, .scanResultInfo, .scanResultInfoGreen
+{
+    font-family: 'Lexend', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #808080;
+    text-align: center;
+    margin-bottom: 31px;
+}
+
+.scanResultInfo
+{
+    color: #000;
+    margin-bottom: 0;
+}
+
+.scanResultInfoGreen
+{
+    color: #338D42;
+}
+
+.scanResultBtns
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scanMagnifyBtn
+{
+    width: 327px;
+    height: 76px;
+    background: #F2F2F2;
+}
+.scanCloseBtn
+{
+    width: 336px;
+    height: 76px;
+    background: #FCECEC;
+}
+.scanCloseBtn:hover, .scanCloseBtn:focus
+{
+    background: #FCECEC;
+}
+
+.scanZoomedImg
+{
+    display: block;
+    width: 50%;
+    /* height: 726px; */
+    /* object-fit: cover; */
+}
+
+
+
+.lightbox {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(200, 198, 198, 0.34);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* animation: none; */
+}
+
+.closeZoomImgBtn
+{
+    margin-top: 19px;
+    width: 336px;
+    height: 76px;
+    background: #FAFAFA;
+    font-size: 20px;
+    line-height: 25px;
+}
+.closeZoomImgBtn:focus, .closeZoomImgBtn:hover
+{
+    background: #FAFAFA;
+}
+
+
+.myswiper
+{
+    width: 850px;
+    height: 726px;
+}
+
+.swiperSlide img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

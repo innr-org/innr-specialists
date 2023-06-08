@@ -13,6 +13,7 @@ import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
 import Videochat from "./pages/videochat/Videochat.jsx";
+import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                         <Route path="/timeslot" element={<TimeSlot/>}></Route>
                         <Route path="/schedule" element={<Schedule/>}></Route>
                         <Route path="/videochat" element={<Videochat/>}></Route>
+                        <Route path="/offlinechat" element={<Offlinechat/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>
