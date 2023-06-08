@@ -1,0 +1,15 @@
+.notificationsWrapper {
+    width: calc(100vw - 253px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F5F5;
+}
+
+.container {
+    width: 90%;
+}
+
+.notifications__text {
+    margin-top: 9px;
+}
