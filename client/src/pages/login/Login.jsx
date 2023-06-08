@@ -1,4 +1,4 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import { userLogin } from '../../features/auth/authActions.js'
@@ -7,6 +7,7 @@ import {PropagateLoader} from "react-spinners";
 import {useNotification} from "../../hooks/useNotification.js";
 import Button from "../../components/UI/button/Button.jsx";
 import cl from './Login.module.css'
+import Modal from "../../components/UI/modal/Modal.jsx";
 
 function Login() {
     const { loading, success, userInfo, error } = useSelector((state) => state.auth)
@@ -14,6 +15,7 @@ function Login() {
     const navigate = useNavigate()
     const emailInput = useRef(null)
     const passwordInput = useRef(null)
+    const [isClicked, setIsClicked] = useState(false)
 
     useEffect(() => {
         if(userInfo!==null){
