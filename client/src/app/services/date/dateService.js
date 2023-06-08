@@ -9,37 +9,37 @@ export default class DateService {
     }
 
     static formatIsoToNormal(str, type){
-        const dateObj = new Date(str);
-        let options
-        switch (type){
-             case "year":
-                 options = { year: 'numeric' };
-                 break
-             case "month":
-                 options = { month: 'long' };
-                 break
-             case "day":
-                 options = { day: 'numeric' };
-                 break
-             default:
-                 options ={ month: 'long', day: 'numeric', year: 'numeric' };
-                 break
-         }
-        const formattedDate = dateObj.toLocaleDateString('ru-RU', options);
-        return formattedDate
+        const date = new Date(str);
+        const options = { timeZone: 'Asia/Almaty', month: 'long', day: 'numeric', year: 'numeric' };
+        return date.toLocaleDateString("ru", options);
     }
 
     static getHours(str){
         const dateObj = new Date(str);
-        const formattedDate = dateObj.getHours();
-        return formattedDate
+        const options = { timeZone: 'Asia/Almaty', /* other options */ };
+        const hours = dateObj.toLocaleTimeString("ru",  options).substring(0, 2)
+        console.log(hours)
+        return hours
     }
 
     static getMinutes(str){
         const dateObj = new Date(str);
-        const formattedDate = (dateObj.getMinutes()<10?'0':'') + dateObj.getMinutes();
-        return formattedDate
+        return dateObj.toLocaleTimeString("ru",  [{ timeZone: 'Asia/Almaty' }]).substring(3, 5)
     }
+
+    static toISOStringWithTimezone(date){
+        const tzOffset = -date.getTimezoneOffset();
+        const diff = tzOffset >= 0 ? '+' : '-';
+        const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+        return date.getFullYear() +
+            '-' + pad(date.getMonth() + 1) +
+            '-' + pad(date.getDate()) +
+            'T' + pad(date.getHours()) +
+            ':' + pad(date.getMinutes()) +
+            ':' + pad(date.getSeconds()) +
+            diff + pad(tzOffset / 60) +
+            ':' + pad(tzOffset % 60);
+    };
 }
 
 
