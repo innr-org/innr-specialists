@@ -15,6 +15,7 @@ import Lobby from "./pages/lobby/Lobby.jsx";
 import Videochat from "./pages/videochat/Videochat.jsx";
 import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
 import Client from "./pages/client/Client.jsx";
+import Notifications from "./pages/notifications/Notifications.jsx";
 
 function App() {
     const dispatch = useDispatch()
@@ -41,6 +42,7 @@ function App() {
                         <Route path="/videochat" element={<Videochat/>}></Route>
                         <Route path="/offlinechat" element={<Offlinechat/>}></Route>
                         <Route path="/client" element={<Client/>}></Route>
+                        <Route path="/notifications" element={<Notifications/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>
