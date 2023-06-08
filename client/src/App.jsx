@@ -12,6 +12,7 @@ import NotAuth from "./components/notAuth/NotAuth.jsx";
 import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
+import Client from "./pages/client/Client.jsx";
 
 
 function App() {
@@ -33,9 +34,10 @@ function App() {
                     {userInfo && <Navigation/>}
                     <Routes>
                         <Route path="/login" element={<Login/>}></Route>
-                        <Route path="/home" element={userInfo===null ? <NotAuth/> :<Home/>}></Route>
-                        <Route path="/timeslot" element={userInfo===null ? <NotAuth/> :<TimeSlot/>}></Route>
-                        <Route path="/schedule" element={userInfo===null ? <NotAuth/> :<Schedule/>}></Route>
+                        <Route path="/home" element={<Home/>}></Route>
+                        <Route path="/timeslot" element={<TimeSlot/>}></Route>
+                        <Route path="/schedule" element={<Schedule/>}></Route>
+                        <Route path="/client" element={<Client/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>

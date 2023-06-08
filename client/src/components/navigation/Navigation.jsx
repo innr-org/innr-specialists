@@ -17,6 +17,8 @@ function Navigation() {
     const homeRef = useRef(null)
     const scheduleRef = useRef(null)
     const timeslotRef = useRef(null)
+    const clientRef = useRef(null)
+
 
     function customLogout(){
         dispatch(logout())
@@ -27,6 +29,8 @@ function Navigation() {
         homeRef.current.classList.remove(cl.active)
         scheduleRef.current.classList.remove(cl.active)
         timeslotRef.current.classList.remove(cl.active)
+        clientRef.current.classList.remove(cl.active)
+
 
         switch (path){
             case "/home":
@@ -38,6 +42,9 @@ function Navigation() {
             case "/timeslot":
                 timeslotRef.current.classList.add(cl.active)
                 break
+            case "/client":
+                clientRef.current.classList.add(cl.active)
+                break
         }
     }, [path])
 
@@ -48,7 +55,7 @@ function Navigation() {
                 <div ref={homeRef} onClick={() => navigate("/home")} className={cl.navItem}><img src={home} alt="asf"/><p>Главная</p></div>
                 <div ref={scheduleRef} onClick={() => navigate("/schedule")} className={cl.navItem}><img src={calendar} alt="asf"/><p>Расписание</p></div>
                 <div ref={timeslotRef} onClick={() => navigate("/timeslot")} className={cl.navItem}><img src={taskSquare} alt="fsaf"/><p>Тайм слоты</p></div>
-                <div  className={cl.navItem}><img src={user} alt="fa"/><p>Личный кабинет</p></div>
+                <div ref={clientRef} onClick={() => navigate("/client")} className={cl.navItem}><img src={user} alt="fsaf"/><p>Личный кабинет</p></div>
             </nav>
             {userInfo!==null
                 ?
