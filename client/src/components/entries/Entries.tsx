@@ -9,6 +9,7 @@ import {
     useReactTable,
 } from '@tanstack/react-table'
 import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 type Person = {
     id: string
@@ -360,6 +361,7 @@ const columns = [
 ]
 
 function Entries({type, selectedDate}) {
+    const navigate = useNavigate()
     const [data, setData] = React.useState(() => defaultData.filter(data => data.date==selectedDate))
       useEffect(() => {
         // console.log(data)
@@ -406,7 +408,7 @@ function Entries({type, selectedDate}) {
                 </thead>
                 <tbody className={cl.tbody}>
                 {table.getRowModel().rows.map(row => (
-                    <tr key={row.id}>
+                    <tr key={row.id} onClick={() => navigate("/client")}>
                         {row.getVisibleCells().map(cell => (
                             <td key={cell.id}>
                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}

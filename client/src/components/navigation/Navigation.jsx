@@ -65,6 +65,7 @@ function Navigation() {
             </div>
             <nav className={cl.navWrapper}>
             <div 
+
                     ref={homeRef} 
                     onClick={() => navigate("/home")} 
                     className={!isArrowClicked ? cl.navItem : cl.navItem + ' ' + cl.navItemMini}
@@ -92,6 +93,12 @@ function Navigation() {
                     <img src={user} alt="fa"/>
                     <p>{!isArrowClicked ? 'Личный кабинет' : ''}</p>
                 </div>
+
+                <div ref={homeRef} onClick={() => navigate("/home")} className={cl.navItem}><img src={home} alt="asf"/><p>Главная</p></div>
+                <div ref={scheduleRef} onClick={() => navigate("/schedule")} className={cl.navItem}><img src={calendar} alt="asf"/><p>Расписание</p></div>
+                <div ref={timeslotRef} onClick={() => navigate("/timeslot")} className={cl.navItem}><img src={taskSquare} alt="fsaf"/><p>Тайм слоты</p></div>
+                <div ref={clientRef} onClick={() => navigate("/client")} className={cl.navItem}><img src={user} alt="fsaf"/><p>Личный кабинет</p></div>
+
             </nav>
             {userInfo!==null
                 ?

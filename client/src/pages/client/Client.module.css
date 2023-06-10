@@ -162,7 +162,9 @@
 }
 
 .upcomingEntries {
-    display: flex;    
+    display: flex;
+    font-weight: 700;
+    margin-top: 16px;
 }
 
 .line {
@@ -205,7 +207,11 @@
     align-self: center;
     justify-content: center;
     border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
 
+.action:hover{
+    background: rgba(205, 249, 114, 0.49);
 }
 
 .action__connect {
@@ -258,7 +264,7 @@
 .notesText {
     font-weight: 500;
     font-size: 14px;
-    line-height: 18px;    
+    line-height: 18px;
     color: #000000;
 }
 
@@ -318,3 +324,4 @@
 .closeBtn {
     cursor: pointer;
 }
+

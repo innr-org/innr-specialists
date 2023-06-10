@@ -34,3 +34,12 @@
     align-items: center;
     gap: 15px;
 }
+
+.additional img{
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.additional img:hover{
+    box-shadow: 5px 5px 15px #CDF972;
+}
