@@ -8,7 +8,7 @@ function NotFound() {
     return (
         <div className={cl.noAuthWrapper}>
             <h2>404! Страница не найдена</h2>
-            <Button onClick={() => navigate("/mainscan")}>Назад</Button>
+            <Button onClick={() => navigate("/login")}>Назад</Button>
         </div>
     );
 }

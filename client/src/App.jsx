@@ -19,6 +19,7 @@ import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
 import Client from "./pages/client/Client.jsx";
 import Notifications from "./pages/notifications/Notifications.jsx";
 import DateService from "./app/services/date/dateService.js";
+import NotFound from "./components/notFound/NotFound.jsx";
 
 
 
