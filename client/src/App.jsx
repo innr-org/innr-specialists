@@ -12,13 +12,8 @@ import NotAuth from "./components/notAuth/NotAuth.jsx";
 import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
-
 import Videochat from "./pages/videochat/Videochat.jsx";
 import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
-import Client from "./pages/client/Client.jsx";
-import Notifications from "./pages/notifications/Notifications.jsx";
-import DateService from "./app/services/date/dateService.js";
-
 import Client from "./pages/client/Client.jsx";
 import Notifications from "./pages/notifications/Notifications.jsx";
 import DateService from "./app/services/date/dateService.js";
