@@ -1,6 +1,6 @@
 import React from 'react';
 import cl from './Message.module.css';
-import messageIcon from '../../../assets/icons/message.png';
+import messageIcon from '../../../assets/icons/message.svg';
 
 function Message({content, ...props}) {
     return (
