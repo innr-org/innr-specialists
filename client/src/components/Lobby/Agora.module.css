@@ -8,7 +8,7 @@
 }
 
 .background{
-    width: 100vw;
+    width: 80vw;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -29,7 +29,7 @@
 #videos{
     position: relative;
     height: 70vh;
-    width: 100vw;
+    width: 80vw;
     margin: auto;
     align-self: flex-start;
     display: grid;
@@ -49,7 +49,7 @@
 .controls{
     position: fixed;
     bottom: 50px;
-    left: 50%;
+    left: 57vw;
     transform: translateX(-50%);
     margin: -20px auto;
     display: grid;
@@ -86,7 +86,7 @@
     height: fit-content;
     height: -moz-max-content;
     top: 50vh;
-    left: 50vw;
+    left: 57vw;
     transform: translate(-50%, -50%);
     width: 500px;
     max-width: 75vw;
