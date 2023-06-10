@@ -64,7 +64,7 @@ const Offlinechat = () => {
 
             <div className={cl.line}></div>
 
-            <main>
+            <main className={cl.main}>
                 <aside className={cl.aside}>
                     <div className={cl.asideWrapper}>
                         <p className={!isClicked ? cl.text : cl.text + ' ' + cl.textFirst}>Примечание</p>
@@ -73,8 +73,13 @@ const Offlinechat = () => {
                                 className={!isClicked ? cl.note : cl.note + ' ' + cl.noteBig}
                                 placeholder='мне удобно на казахском, сухая кожа, акне'>
                             </textarea>
-                            <Button className={cl.notesBtn}>Сохранить и отправить</Button>
-                            <Button className={cl.btnEnd}>Прием завершен</Button>
+                            <Button className={!isClicked ? cl.notesBtn : cl.notesBtn + ' ' + cl.hide}>Сохранить и отправить</Button>
+                            <Button className={!isClicked ? cl.btnEnd : cl.btnEnd + ' ' + cl.hide}>Прием завершен</Button>
+
+                            <div className={!isClicked ? cl.btnsWrapper : cl.btnsWrapper + ' ' + cl.btnsWrapperActive}>
+                                <Button className={!isClicked ? cl.notesBtn : cl.notesBtn + ' ' + cl.notesBtnShow}>Сохранить и отправить</Button>
+                                <Button className={!isClicked ? cl.btnEnd : cl.btnEnd + ' ' + cl.btnEndShow}>Прием завершен</Button>
+                            </div>
                         </div>
                         
                     </div>
