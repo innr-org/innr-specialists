@@ -8,7 +8,6 @@ import {useGetUserDetailsQuery} from "./app/services/auth/authService.js";
 import Navigation from "./components/navigation/Navigation.jsx";
 import {useEffect} from "react";
 import {setCredentials} from "./features/auth/authSlice.js";
-import NotAuth from "./components/notAuth/NotAuth.jsx";
 import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
@@ -18,11 +17,7 @@ import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
 import Client from "./pages/client/Client.jsx";
 import Notifications from "./pages/notifications/Notifications.jsx";
 import DateService from "./app/services/date/dateService.js";
-
-import Client from "./pages/client/Client.jsx";
-import Notifications from "./pages/notifications/Notifications.jsx";
-import DateService from "./app/services/date/dateService.js";
-import NotFound from "./components/notFound/NotFound.jsx";
+import Specialist from "./pages/specialist/Specialist.jsx";
 
 
 
@@ -54,6 +49,7 @@ function App() {
 
                         <Route path="/client" element={<Client/>}></Route>
                         <Route path="/notifications" element={<Notifications/>}></Route>
+                        <Route path="/specialist" element={<Specialist/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>

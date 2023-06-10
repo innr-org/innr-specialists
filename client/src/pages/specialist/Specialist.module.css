@@ -1,0 +1,212 @@
+.specialistWrapper {
+    width: calc(100vw - 253px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F5F5;
+}
+
+.container {
+    width: 90%;
+}
+.specialist__card {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 18px;
+}
+
+.specialist__profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 295px;
+    height: 311px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    padding: 48px 30px 51px;
+}
+
+.specialist__name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 29px;
+}
+
+.specialist__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 800px;
+    height: 311px;
+    padding: 51px 22px 24px 22px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.specialist__card__info {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.specialist__heading {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #808080;
+}
+
+.specialist__name__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__name__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__gender__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__status__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #338D42;
+}
+
+.specialist__date__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__city__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__experience__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__email__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__phonenumber__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.specialist__price__text {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #338D42;
+}
+
+.headline {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 18px;
+}
+
+.fullInformation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.info__blocks {
+    display: flex;
+    align-items: self-start;
+    justify-content: space-between;
+}
+
+.info__headline {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.info__bg {
+    background: #FFFFFF;
+    border: 1px solid #BFBFBF;
+    width: 800px;
+    border-radius: 10px;
+    padding: 15px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.info__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.info__img {
+    display: flex;
+    justify-content: start;
+    align-items: self-start;
+    gap: 26px;
+}
+
+.tag__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.info__tag__blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tag__list {
+    width: 800px;
+}
+
+.tag {
+    padding: 14px 29px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
