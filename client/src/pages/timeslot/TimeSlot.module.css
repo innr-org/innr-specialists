@@ -1,5 +1,5 @@
 .timeslotWrapper{
-    width: calc(100vw - 253px);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

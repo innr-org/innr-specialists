@@ -12,10 +12,15 @@ import NotAuth from "./components/notAuth/NotAuth.jsx";
 import TimeSlot from "./pages/timeslot/TimeSlot.jsx";
 import Schedule from "./pages/schedule/Schedule.jsx";
 import Lobby from "./pages/lobby/Lobby.jsx";
+
+import Videochat from "./pages/videochat/Videochat.jsx";
+import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
+
 import Client from "./pages/client/Client.jsx";
 import Notifications from "./pages/notifications/Notifications.jsx";
 import DateService from "./app/services/date/dateService.js";
 import NotFound from "./components/notFound/NotFound.jsx";
+
 
 
 function App() {
@@ -37,13 +42,18 @@ function App() {
                     {userInfo && <Navigation/>}
                     <Routes>
                         <Route path="/login" element={<Login/>}></Route>
-                        <Route path="/home" element={!userInfo ? <NotAuth/> : <Home/>}></Route>
-                        <Route path="/timeslot" element={!userInfo ? <NotAuth/> : <TimeSlot/>}></Route>
-                        <Route path="/schedule" element={!userInfo ? <NotAuth/> : <Schedule/>}></Route>
-                        <Route path="/client" element={!userInfo ? <NotAuth/> : <Client/>}></Route>
-                        <Route path="/notifications" element={!userInfo ? <NotAuth/> : <Notifications/>}></Route>
-                        <Route path="/lobby" element={!userInfo ? <NotAuth/> : <Lobby/>}></Route>
-                        <Route path="*" element={<NotFound/>}></Route>
+                        <Route path="/home" element={<Home/>}></Route>
+                        <Route path="/timeslot" element={<TimeSlot/>}></Route>
+                        <Route path="/schedule" element={<Schedule/>}></Route>
+
+                        <Route path="/videochat" element={<Videochat/>}></Route>
+                        <Route path="/offlinechat" element={<Offlinechat/>}></Route>
+
+                        <Route path="/client" element={<Client/>}></Route>
+                        <Route path="/notifications" element={<Notifications/>}></Route>
+
+                        <Route path="/lobby" element={<Lobby/>}></Route>
+                        <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>
                 </div>
                 <PropagateLoader

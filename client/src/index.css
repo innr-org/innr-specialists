@@ -81,3 +81,9 @@ button:focus-visible {
 html, body{
   overflow-x: hidden;
 }
+
+.swiper-button-next,
+.swiper-button-prev
+{
+    color: white !important;
+}
