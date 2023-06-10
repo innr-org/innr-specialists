@@ -9,6 +9,7 @@
     border-radius: 10px;
 }
 
+
 .messageWrapper:hover{
     background-color: rgba(200, 250, 96, 0.38);
     cursor: pointer;
@@ -38,3 +39,4 @@
     line-height: 19px;
     color: #000000;
 }
+

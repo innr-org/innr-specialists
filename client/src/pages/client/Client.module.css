@@ -221,7 +221,6 @@
     color: #000000;
 }
 
-
 .pastEntries {
     display: flex;
 }
@@ -325,3 +324,4 @@
 .closeBtn {
     cursor: pointer;
 }
+

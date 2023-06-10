@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+
+import React from 'react';
 import cl from './Notifications.module.css';
 import Message from '../../components/UI/message/Message';
 import Header from '../../components/header/Header';
@@ -37,3 +38,4 @@ function Notifications() {
 }
 
 export default Notifications;
+

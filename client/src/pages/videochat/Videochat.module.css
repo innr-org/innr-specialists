@@ -84,6 +84,7 @@
 {
     display: flex;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .video
@@ -99,7 +100,7 @@
 {
     /* margin-bottom: 294px; */
     height: 641px;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
 }
 
 .videoWrapper
@@ -273,12 +274,13 @@
 
 .scans
 {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     margin-top: 9px;
     display: none;
     width: 1035px;
+    height: 294px;
     gap: 18px;
 }
 .scansActive

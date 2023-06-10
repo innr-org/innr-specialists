@@ -64,8 +64,8 @@ function Navigation() {
                 />
             </div>
             <nav className={cl.navWrapper}>
+            <div 
 
-                <div 
                     ref={homeRef} 
                     onClick={() => navigate("/home")} 
                     className={!isArrowClicked ? cl.navItem : cl.navItem + ' ' + cl.navItemMini}

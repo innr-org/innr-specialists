@@ -15,6 +15,9 @@ import Lobby from "./pages/lobby/Lobby.jsx";
 
 import Videochat from "./pages/videochat/Videochat.jsx";
 import Offlinechat from "./pages/offlinechat/Offlinechat.jsx";
+import Client from "./pages/client/Client.jsx";
+import Notifications from "./pages/notifications/Notifications.jsx";
+import DateService from "./app/services/date/dateService.js";
 
 import Client from "./pages/client/Client.jsx";
 import Notifications from "./pages/notifications/Notifications.jsx";
@@ -51,7 +54,6 @@ function App() {
 
                         <Route path="/client" element={<Client/>}></Route>
                         <Route path="/notifications" element={<Notifications/>}></Route>
-
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>

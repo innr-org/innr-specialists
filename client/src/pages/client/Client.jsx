@@ -6,18 +6,20 @@ import profilePic from '../../assets/icons/profile-circle.png';
 import closeBtn from '../../assets/icons/close.png';
 import Button from '../../components/UI/button/Button';
 import Modal from '../../components/UI/modal/Modal';
+
 import Header from "../../components/header/Header.jsx";
 import {useNavigate} from "react-router-dom";
 
 function Client() {
     const navigate = useNavigate()
+
     const [activeTab, setActiveTab] = useState(1);
     const [isClicked, setIsClicked] = useState();
 
     const handleTabClick = (tabIndex) => {
       setActiveTab(tabIndex);
     };
-
+    
     return (
         <div className={cl.clientWrapper}>
             <div className={cl.container}>
@@ -68,7 +70,6 @@ function Client() {
                             >
                                 Предстоящие записи
                             </Button>
-
                             <Button
                                 style={{ width: '209px', fontSize: '15px', background: "#FAFAFA" }}
                                 className={activeTab === 2 ? 'active' : ''}
@@ -86,7 +87,8 @@ function Client() {
                         </div>
                         <div className={cl.tabContent}>
                             {
-                                activeTab === 1 &&
+                                activeTab === 1 && 
+
                                 <div className={cl.upcomingEntries}>
                                     <div className={cl.line}>
                                         <div className={cl.circle}></div>
@@ -98,12 +100,15 @@ function Client() {
                                         <div className={cl.action}>
                                             {/* <img src={videoIcon} alt="Подключиться" /> */}
                                             <p className={cl.action__connect} onClick={() => navigate("/lobby")}>Подключиться</p>
+
                                         </div>
                                     </div>
                                 </div>
                             }
                             {
+
                                 activeTab === 2 &&
+
                                 <div className={cl.pastEntries}>
                                     <div className={cl.line}>
                                         <div className={cl.circle}></div>
@@ -114,7 +119,9 @@ function Client() {
                                 </div>
                             }
                             {
+
                                 activeTab === 3 &&
+
                                 <div className={cl.notes}>
                                     <div className={cl.line}>
                                         <div className={cl.circle}></div>
@@ -141,8 +148,10 @@ function Client() {
                     <div className={cl.comments}>
                         <div className={cl.comments__headlines}>
                             <p className={cl.headline}>Комментарии</p>
+
                             <p
                                 onClick={() => setIsClicked(true)}
+
                                 className={cl.viewAll}
                             >
                                 <a className={cl.viewAllLink} href="#">Посмотреть все</a>
@@ -151,9 +160,11 @@ function Client() {
                                 <div className={cl.modal__comments}>
                                     <div className={cl.modal__headline}>
                                         <p className={cl.headline}>Комментарии</p>
+
                                         <img
                                             onClick={() => setIsClicked(false)}
                                             src={closeBtn} alt="close"
+
                                             className={cl.closeBtn}
                                         />
                                     </div>
@@ -172,7 +183,9 @@ function Client() {
                                             мне удобно на казахском, сухая кожа, акне
                                         </p>
                                     </div>
+
                                 </div>
+
                             </Modal>
                         </div>
                         <div className={cl.comments__content}>
@@ -198,3 +211,4 @@ function Client() {
 }
 
 export default Client;
+
