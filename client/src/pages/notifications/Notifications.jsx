@@ -31,7 +31,6 @@ function Notifications() {
                  <Header />
                 <p className={cl.notifications__text}>Уведомления</p>
                 {allMessages}
-
             </div>
         </div>
     );

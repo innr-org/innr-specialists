@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import cl from './Client.module.css';
 // import Header from '../../components/header/Header';
-import profilePic from '../../assets/icons/profile-circle.png';
-// import videoIcon from '../../assets/icons/video.png';
-import closeBtn from '../../assets/icons/close.png';
+import profilePic from '../../assets/icons/profilepic.svg';
+import videoIcon from '../../assets/icons/video.svg';
+import editIcon from '../../assets/icons/edit.svg';
+import closeBtn from '../../assets/icons/close.svg';
 import Button from '../../components/UI/button/Button';
 import Modal from '../../components/UI/modal/Modal';
 
@@ -63,23 +64,20 @@ function Client() {
                 <div className={cl.records}>
                     <div className={cl.recordsContent}>
                         <div className={cl.tabHeader}>
-                            <Button
-                                style={{ width: '209px', fontSize: '15px', background: "#FAFAFA" }}
-                                className={activeTab === 1 ? 'active' : ''}
+                            <Button 
+                                className={activeTab === 1 ? cl.btnTab + ' ' + cl.activeTab : cl.btnTab}
                                 onClick={() => handleTabClick(1)}
                             >
                                 Предстоящие записи
                             </Button>
                             <Button
-                                style={{ width: '209px', fontSize: '15px', background: "#FAFAFA" }}
-                                className={activeTab === 2 ? 'active' : ''}
+                                className={activeTab === 1 ? cl.btnTab + ' ' + cl.activeTab : cl.btnTab}
                                 onClick={() => handleTabClick(2)}
                             >
                                 Прошедшие записи
                             </Button>
                             <Button
-                                style={{ width: '209px', fontSize: '15px', background: "#FAFAFA" }}
-                                className={activeTab === 3 ? 'active' : ''}
+                                className={activeTab === 1 ? cl.btnTab + ' ' + cl.activeTab : cl.btnTab}
                                 onClick={() => handleTabClick(3)}
                             >
                                 Примечание
@@ -94,13 +92,23 @@ function Client() {
                                         <div className={cl.circle}></div>
                                     </div>
                                     <div className={cl.upcomingEntriesContent}>
-                                        <p className={cl.client__date__text}>Июнь 02, 2023</p>
-                                        <p className={cl.client__time__text}>10:00</p>
-                                        <p className={cl.client__mode}>Online</p>
-                                        <div className={cl.action}>
-                                            {/* <img src={videoIcon} alt="Подключиться" /> */}
-                                            <p className={cl.action__connect} onClick={() => navigate("/lobby")}>Подключиться</p>
-
+                                        {/* <div className={cl.connectToChat}>
+                                            <p className={cl.client__date__text}>Июнь 02, 2023</p>
+                                            <p className={cl.client__time__text}>10:00</p>
+                                            <p className={cl.client__mode__online}>Онлайн</p>
+                                            <div className={cl.action}>
+                                                <img className={cl.videoIcon} src={videoIcon} alt="Подключиться" />
+                                                <p className={cl.action__connect} onClick={() => navigate("/lobby")}>Подключиться</p>
+                                            </div>
+                                        </div> */}
+                                        <div className={cl.editRecord}>
+                                            <p className={cl.client__date__text}>Июнь 02, 2023</p>
+                                            <p className={cl.client__time__text}>10:00</p>
+                                            <p className={cl.client__mode__past}>Оффлайн</p>
+                                            <div className={cl.action}>
+                                                <img className={cl.videoIcon} src={editIcon} alt="Edit" />
+                                                <p className={cl.action__edit}>Заполнить</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -112,9 +120,24 @@ function Client() {
                                 <div className={cl.pastEntries}>
                                     <div className={cl.line}>
                                         <div className={cl.circle}></div>
+                                        <div className={cl.circleSecond}></div>
+
                                     </div>
                                     <div className={cl.pastEntriesContent}>
-                                        <p className={cl.empty}>Здесь пусто</p>
+                                        {/* <div className={cl.emptyContent}>
+                                            <p className={cl.empty}>Здесь пусто</p>
+                                        </div> */}
+                                        <div className={cl.pastEntriesRecords}>
+                                            <p className={cl.client__date__text}>Июнь 02, 2023</p>
+                                            <p className={cl.client__time__text}>10:00</p>
+                                            <p className={cl.client__mode__past}>Оффлайн</p>
+                                        </div>
+                                        <div className={cl.pastEntriesRecords}>
+                                            <p className={cl.client__date__text}>Июнь 02, 2023</p>
+                                            <p className={cl.client__time__text}>10:00</p>
+                                            <p className={cl.client__mode__online}>Онлайн</p>
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             }
@@ -123,11 +146,9 @@ function Client() {
                                 activeTab === 3 &&
 
                                 <div className={cl.notes}>
-                                    <div className={cl.line}>
-                                        <div className={cl.circle}></div>
-                                    </div>
                                     <div className={cl.notesContent}>
-                                        <p className={cl.notesText}>
+                                        <p className={cl.empty}>Здесь пусто</p>
+                                        {/* <p className={cl.notesText}>
                                             мне удобно на казахском, сухая кожа, акне, мне удобно на казахском, сухая кожа, акне, мне удобно на казахском, сухая кожа, акне
                                             мне удобно на казахском, сухая кожа, акне
                                             мне удобно на казахском, сухая кожа, акне
@@ -139,7 +160,7 @@ function Client() {
                                             мне удобно на казахском, сухая кожа, акне
                                             мне удобно на казахском, сухая кожа, акне
                                             мне удобно на казахском, сухая кожа, акне
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
                             }
