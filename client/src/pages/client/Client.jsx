@@ -24,7 +24,7 @@ function Client() {
     return (
         <div className={cl.clientWrapper}>
             <div className={cl.container}>
-                 <Header />
+                 {/* <Header /> */}
                 <div className={cl.upcomingEntries}>Предстоящие записи</div>
                 <div className={cl.client__card}>
                     <div className={cl.client__connect}>
