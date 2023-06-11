@@ -13,8 +13,8 @@ const Clientedit = () => {
     const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
       <button className={cl.customInput} ref={ref}>
         
-        <span>{value.slice(0, 2)}</span>
         <span>{value.slice(3, 5)}</span>
+        <span>{value.slice(0, 2)}</span>
         <span>{value.slice(6, 10)}</span>
         <img onClick={onClick} className={cl.customInputIcon} src={calendarIcon} alt='calendar-icon' />
       </button>
@@ -58,8 +58,12 @@ const Clientedit = () => {
                                 <DatePicker
                                     selected={startDate}
                                     onChange={(date) => setStartDate(date)}
-                                    placeholderText="ДД | ММ | ГГГГ"
+                                    // placeholderText="ДД | ММ | ГГГГ"
                                     customInput={<ExampleCustomInput />}
+                                    showYearDropdown
+                                    // dateFormatCalendar="dd.MM.yyyy"
+                                    yearDropdownItemNumber={100}
+                                    scrollableYearDropdown
                                 />
                                 <p className={cl.editRowField}>Женщина</p>
                                 <p className={cl.editRowField}>adelalibekova@gmail.com</p>
