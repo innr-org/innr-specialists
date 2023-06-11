@@ -18,6 +18,7 @@ import Client from "./pages/client/Client.jsx";
 import Notifications from "./pages/notifications/Notifications.jsx";
 import DateService from "./app/services/date/dateService.js";
 import NotFound from "./components/notFound/NotFound.jsx";
+import Clientedit from "./pages/clientedit/Clientedit.jsx";
 
 
 
@@ -49,6 +50,8 @@ function App() {
 
                         <Route path="/client" element={<Client/>}></Route>
                         <Route path="/notifications" element={<Notifications/>}></Route>
+
+                        <Route path="/clientedit" element={<Clientedit/>}></Route>
                         <Route path="/lobby" element={<Lobby/>}></Route>
                         <Route path="*" element={<Navigate to="/login" replace={true} />}></Route>
                     </Routes>
